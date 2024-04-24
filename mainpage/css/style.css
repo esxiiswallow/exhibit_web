@@ -1,0 +1,96 @@
+html, body 
+{
+  margin: 0; padding: 0;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  -webkit-user-select: none;
+  overscroll-behavior: contain;
+  -moz-user-select: none;   
+  -ms-user-select: none;   
+  user-select: none;
+  background-color: #011529;
+  cursor: pointer;
+}
+
+button {
+    background-color: transparent;
+    border: none;
+}
+
+canvas 
+{
+  display: block;
+  position: absolute;
+}
+
+.bg{
+  display: block;
+  background-color: #FFFFFF;
+  width: 100vw;
+  height: 177vw;
+  background-image: url(../assets/page1/BG.png);
+  background-position: top center;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+.game1{
+  display: block;
+  position: absolute;
+  top: 40vw;
+  left: 25vw;
+  z-index: 2;
+  transform: translate(-50%,-50%);
+  width: 40vw;
+  height: 17vw;
+}
+.game2{
+  display: block;
+  position: absolute;
+  top: 40vw;
+  left: 75vw;
+  z-index: 2;
+  transform: translate(-50%,-50%);
+  width: 40vw;
+  height: 17vw;
+}
+.game3{
+  display: block;
+  position: absolute;
+  top: 70vw;
+  left: 25vw;
+  z-index: 2;
+  transform: translate(-50%,-50%);
+  width: 40vw;
+  height: 17vw;
+}
+.game4{
+  display: block;
+  position: absolute;
+  top: 70vw;
+  left: 75vw;
+  z-index: 2;
+  transform: translate(-50%,-50%);
+  width: 40vw;
+  height: 17vw;
+}
+.game5{
+  display: block;
+  position: absolute;
+  top: 100vw;
+  left: 25vw;
+  z-index: 2;
+  transform: translate(-50%,-50%);
+  width: 40vw;
+  height: 17vw;
+}
+.game6{
+  display: block;
+  position: absolute;
+  top: 100vw;
+  left: 75vw;
+  z-index: 2;
+  transform: translate(-50%,-50%);
+  width: 40vw;
+  height: 17vw;
+}
