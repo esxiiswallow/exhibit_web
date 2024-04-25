@@ -1,0 +1,222 @@
+let Mycanvas;
+
+let cardNumbers = [];
+let open = [false, false, false, false, false, false, false, false, false]
+
+function preload(){
+  title = loadImage("./assets/page0/title.png");
+  cardback = loadImage("./assets/page0/cardback.png");
+	sp10Off = loadImage("./assets/page0/10off.png");
+  sp20Off = loadImage("./assets/page0/20off.png");
+  sp30Off = loadImage("./assets/page0/30off.png");
+
+  //imgBG = loadImage('./assets/page0/2_lightBG.png');
+  //train = loadImage("./assets/page0/light0/fram.png")
+}
+
+let canvasW;
+let canvasH;
+function setup() 
+{
+  canvasW = windowWidth;
+  canvasH = canvasW*1.6;
+
+  Mycanvas = createCanvas(canvasW, canvasH); 
+  Mycanvas.id('Mycanvas');
+  imageMode(CENTER);
+
+  //排列數字
+  for (let i = 1; i <= 9; i++) {
+    cardNumbers.push(i);
+  }
+  shuffle(cardNumbers, true);
+  console.log(cardNumbers);
+
+  cardsize = [canvasW*0.2, canvasW*0.2];
+
+  card1pos = [canvasW*0.45, canvasW*0.7];
+  card2pos = [canvasW*0.65, canvasW*0.7];
+  card3pos = [canvasW*0.85, canvasW*0.7];
+  card4pos = [canvasW*0.45, canvasW*0.9];
+  card5pos = [canvasW*0.65, canvasW*0.9];
+  card6pos = [canvasW*0.85, canvasW*0.9];
+  card7pos = [canvasW*0.45, canvasW*1.1];
+  card8pos = [canvasW*0.65, canvasW*1.1];
+  card9pos = [canvasW*0.85, canvasW*1.1];
+}
+
+function draw() 
+{
+  background(255, 187, 254);
+  image(title, canvasW*0.5, canvasW*0.1, canvasW*1, canvasW*0.2);
+  image(cardback, card1pos[0], card1pos[1], cardsize[0], cardsize[1]);
+  if(open[0]){
+    push();
+    //fill(255);
+    //textSize(canvasW*0.1);
+    //text(cardNumbers[0], card1pos[0], card1pos[1]);
+    showColor(cardNumbers[0], card1pos[0], card1pos[1]);
+    pop();
+  }
+  image(cardback, card2pos[0], card2pos[1], cardsize[0], cardsize[1]);
+  if(open[1]){
+    push();
+    //fill(255);
+    //textSize(canvasW*0.1);
+    showColor(cardNumbers[1], card2pos[0], card2pos[1]);
+    pop();
+  }
+  image(cardback, card3pos[0], card3pos[1], cardsize[0], cardsize[1]);
+  if(open[2]){
+    push();
+    //fill(255);
+    //textSize(canvasW*0.1);
+    showColor(cardNumbers[2], card3pos[0], card3pos[1]);
+    pop();
+  }
+  image(cardback, card4pos[0], card4pos[1], cardsize[0], cardsize[1]);
+  if(open[3]){
+    push();
+    //fill(255);
+    //textSize(canvasW*0.1);
+    showColor(cardNumbers[3], card4pos[0], card4pos[1]);
+    pop();
+  }
+  image(cardback, card5pos[0], card5pos[1], cardsize[0], cardsize[1]);
+  if(open[4]){
+    push();
+    //fill(255);
+    //textSize(canvasW*0.1);
+    showColor(cardNumbers[4], card5pos[0], card5pos[1]);
+    pop();
+  }
+  image(cardback, card6pos[0], card6pos[1], cardsize[0], cardsize[1]);
+  if(open[5]){
+    push();
+    //fill(255);
+    //textSize(canvasW*0.1);
+    showColor(cardNumbers[5], card6pos[0], card6pos[1]);
+    pop();
+  }
+  image(cardback, card7pos[0], card7pos[1], cardsize[0], cardsize[1]);
+  if(open[6]){
+    push();
+    //fill(255);
+    //textSize(canvasW*0.1);
+    showColor(cardNumbers[6], card7pos[0], card7pos[1]);
+    pop();
+  }
+  image(cardback, card8pos[0], card8pos[1], cardsize[0], cardsize[1]);
+  if(open[7]){
+    push();
+    //fill(255);
+    //textSize(canvasW*0.1);
+    showColor(cardNumbers[7], card8pos[0], card8pos[1]);
+    pop();
+  }
+  image(cardback, card9pos[0], card9pos[1], cardsize[0], cardsize[1]);
+  if(open[8]){
+    push();
+    //fill(255);
+    //textSize(canvasW*0.1);
+    showColor(cardNumbers[8], card9pos[0], card9pos[1]);
+    pop();
+  }
+}
+
+
+function mousePressed() {
+  let thiscolor = color(255, 255, 255);
+  if (mouseX < card1pos[0] + cardsize[0]*0.4 && mouseX > card1pos[0] - cardsize[0]*0.4 && 
+    mouseY < card1pos[1] + cardsize[1]*0.4 && mouseY > card1pos[1] - cardsize[1]*0.4) {
+    if(!open[0]){
+      console.log(cardNumbers[0]);
+      open[0] = true;
+    }
+  }
+  if (mouseX < card2pos[0] + cardsize[0]*0.4 && mouseX > card2pos[0] - cardsize[0]*0.4 && 
+    mouseY < card2pos[1] + cardsize[1]*0.4 && mouseY > card2pos[1] - cardsize[1]*0.4) {
+    if(!open[1]){
+      console.log(cardNumbers[1]);
+      open[1] = true;
+    }
+  }
+  if (mouseX < card3pos[0] + cardsize[0]*0.4 && mouseX > card3pos[0] - cardsize[0]*0.4 && 
+    mouseY < card3pos[1] + cardsize[1]*0.4 && mouseY > card3pos[1] - cardsize[1]*0.4) {
+    if(!open[2]){
+      console.log(cardNumbers[2]);
+      open[2] = true;
+    }
+  }
+  if (mouseX < card4pos[0] + cardsize[0]*0.4 && mouseX > card4pos[0] - cardsize[0]*0.4 && 
+    mouseY < card4pos[1] + cardsize[1]*0.4 && mouseY > card4pos[1] - cardsize[1]*0.4) {
+    if(!open[3]){
+      console.log(cardNumbers[3]);
+      open[3] = true;
+    }
+  }
+  if (mouseX < card5pos[0] + cardsize[0]*0.4 && mouseX > card5pos[0] - cardsize[0]*0.4 && 
+    mouseY < card5pos[1] + cardsize[1]*0.4 && mouseY > card5pos[1] - cardsize[1]*0.4) {
+    if(!open[4]){
+      console.log(cardNumbers[4]);
+      open[4] = true;
+    }
+  }
+  if (mouseX < card6pos[0] + cardsize[0]*0.4 && mouseX > card6pos[0] - cardsize[0]*0.4 && 
+    mouseY < card6pos[1] + cardsize[1]*0.4 && mouseY > card6pos[1] - cardsize[1]*0.4) {
+    if(!open[5]){
+      console.log(cardNumbers[5]);
+      open[5] = true;
+    }
+  }
+  if (mouseX < card7pos[0] + cardsize[0]*0.4 && mouseX > card7pos[0] - cardsize[0]*0.4 && 
+    mouseY < card7pos[1] + cardsize[1]*0.4 && mouseY > card7pos[1] - cardsize[1]*0.4) {
+    if(!open[6]){
+      console.log(cardNumbers[6]);
+      open[6] = true;
+    }
+  }
+  if (mouseX < card8pos[0] + cardsize[0]*0.4 && mouseX > card8pos[0] - cardsize[0]*0.4 && 
+    mouseY < card8pos[1] + cardsize[1]*0.4 && mouseY > card8pos[1] - cardsize[1]*0.4) {
+    if(!open[7]){
+      console.log(cardNumbers[7]);
+      open[7] = true;
+    }
+  }
+  if (mouseX < card9pos[0] + cardsize[0]*0.4 && mouseX > card9pos[0] - cardsize[0]*0.4 && 
+    mouseY < card9pos[1] + cardsize[1]*0.4 && mouseY > card9pos[1] - cardsize[1]*0.4) {
+    if(!open[8]){
+      console.log(cardNumbers[8]);
+      open[8] = true;
+    }
+  }
+/*
+  let cloud = {
+    x: mouseX,
+    y: mouseY,
+    color: thiscolor, // 随机生成颜色
+    alpha: 255 // 初始透明度
+  };
+  effectArr.push(cloud);
+*/
+}
+
+function showColor(number, x, y){
+  switch(number){
+    case 1:
+    case 2:
+    case 3:
+      image(sp10Off,x, y ,cardsize[0], cardsize[1]);
+      break;
+    case 4:
+    case 5:
+    case 6:
+      image(sp20Off,x, y ,cardsize[0], cardsize[1]);
+      break;
+    case 7:
+    case 8:
+    case 9:
+      image(sp30Off,x, y ,cardsize[0], cardsize[1]);
+      break;
+  }
+}

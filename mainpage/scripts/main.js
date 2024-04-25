@@ -173,6 +173,6 @@ function mouseMoved(){
 
 function but1Click(){
   setTimeout(function() {
-    location.href = '3_thank.html';
+    location.href = '../gameA/index.html';
   }, 1000);
 }
