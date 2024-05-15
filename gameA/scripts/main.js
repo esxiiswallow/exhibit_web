@@ -10,6 +10,13 @@ function preload(){
   sp20Off = loadImage("./assets/page0/20off.png");
   sp30Off = loadImage("./assets/page0/30off.png");
 
+  gameANote = loadImage("./assets/page0/GameANote.png");
+
+  pointFormUP = loadImage("./assets/page0/pointFormUP.png");
+  pointFormDW = loadImage("./assets/page0/pointFormDW.png");
+
+  star = loadImage("./assets/page0/star.png")
+
   //imgBG = loadImage('./assets/page0/2_lightBG.png');
   //train = loadImage("./assets/page0/light0/fram.png")
 }
@@ -44,6 +51,9 @@ function setup()
   card8pos = [canvasW*0.65, canvasW*1.1];
   card9pos = [canvasW*0.85, canvasW*1.1];
 
+  pointFormUP.resize(canvasW*0.4, 0);
+  pointFormDW.resize(canvasW*0.4, 0);
+
   let resetBut = select("#resetBut");
   resetBut.mousePressed(reset);
 }
@@ -58,12 +68,23 @@ let secendGift = 0;
 let thirdGift = 0;
 let gift=0;
 let wait=0;
+let star1X;
+let star2X;
+let star3X;
 
 function draw() 
 {
   if(playStage){
     background(255, 187, 254);
     image(title, canvasW*0.5, canvasW*0.1, canvasW*1, canvasW*0.2);
+    image(gameANote, canvasW*0.5, canvasW*0.4, canvasW, canvasW*0.3);
+    image(pointFormDW,canvasW*0.19,canvasW*0.83);
+
+    starLong(canvasW*0.05, canvasW*0.65, canvasW*0.2, canvasW*0.75, firstGift);
+    starLong(canvasW*0.05, canvasW*0.78, canvasW*0.2, canvasW*0.88, secendGift);
+    starLong(canvasW*0.05, canvasW*0.91, canvasW*0.2, canvasW*1.01, thirdGift);
+
+    image(pointFormUP,canvasW*0.19,canvasW*0.83);
     image(cardback, card1pos[0], card1pos[1], cardsize[0], cardsize[1]);
     if(open[0]){
       push();
@@ -302,6 +323,28 @@ function countPoint(number){
       thirdGift++;
       break;
   }
+}
+
+function starLong(x1, y1, x2, y2, long){
+  let starWidth;
+  push();
+  imageMode(CORNERS);
+  switch(long){
+   case 0:
+    starWidth = x1 + canvasW*0.15;
+    break;
+   case 1:
+    starWidth = x1 + canvasW*0.2;
+    break;
+   case 2:
+    starWidth = x1 + canvasW*0.25;
+    break;
+   case 3:
+    starWidth = x1 + canvasW*0.29;
+    break;
+  }
+  image(star, x1, y1, starWidth, y2);
+  pop();
 }
 
 function reset(){
