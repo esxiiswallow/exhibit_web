@@ -10,7 +10,7 @@ function preload(){
   sp20Off = loadImage("./assets/page0/20off.png");
   sp30Off = loadImage("./assets/page0/30off.png");
 
-  gameANote = loadImage("./assets/page0/GameANote.png");
+  gameANote = loadImage("./assets/page0/gameANote.png");
 
   pointFormUP = loadImage("./assets/page0/pointFormUP.png");
   pointFormDW = loadImage("./assets/page0/pointFormDW.png");
