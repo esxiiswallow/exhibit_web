@@ -41,15 +41,15 @@ function setup()
 
   cardsize = [canvasW*0.2, canvasW*0.2];
 
-  card1pos = [canvasW*0.45, canvasW*0.7];
-  card2pos = [canvasW*0.65, canvasW*0.7];
-  card3pos = [canvasW*0.85, canvasW*0.7];
-  card4pos = [canvasW*0.45, canvasW*0.9];
-  card5pos = [canvasW*0.65, canvasW*0.9];
-  card6pos = [canvasW*0.85, canvasW*0.9];
-  card7pos = [canvasW*0.45, canvasW*1.1];
-  card8pos = [canvasW*0.65, canvasW*1.1];
-  card9pos = [canvasW*0.85, canvasW*1.1];
+  card1pos = [canvasW*0.47, canvasW*0.7];
+  card2pos = [canvasW*0.67, canvasW*0.7];
+  card3pos = [canvasW*0.87, canvasW*0.7];
+  card4pos = [canvasW*0.47, canvasW*0.9];
+  card5pos = [canvasW*0.67, canvasW*0.9];
+  card6pos = [canvasW*0.87, canvasW*0.9];
+  card7pos = [canvasW*0.47, canvasW*1.1];
+  card8pos = [canvasW*0.67, canvasW*1.1];
+  card9pos = [canvasW*0.87, canvasW*1.1];
 
   pointFormUP.resize(canvasW*0.4, 0);
   pointFormDW.resize(canvasW*0.4, 0);
@@ -161,7 +161,7 @@ function draw()
   }
   if(countStage){
     //console.log("count Stage")
-    console.log(gift);
+    //console.log(gift);
     if(wait<60){
       wait++;
     }else{
@@ -340,7 +340,7 @@ function starLong(x1, y1, x2, y2, long){
     starWidth = x1 + canvasW*0.25;
     break;
    case 3:
-    starWidth = x1 + canvasW*0.29;
+    starWidth = x1 + canvasW*0.3;
     break;
   }
   image(star, x1, y1, starWidth, y2);
